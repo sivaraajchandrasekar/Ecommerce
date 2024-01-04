@@ -1,0 +1,131 @@
+
+.login_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/Login/laptop-office-plant-black-background-top-view.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.login_form_container {
+padding: 50px;
+position: relative; 
+z-index: 1; 
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login_form_container::before {
+content: '';
+position: absolute;
+top: -10px; /* Adjust as needed to cover the border */
+bottom: -10px; /* Adjust as needed to cover the border */
+left: -10px; /* Adjust as needed to cover the border */
+right: -10px; /* Adjust as needed to cover the border */
+z-index: -1; /* Behind the form content */
+border: 1px solid transparent; /* Transparent border to keep space */
+border-radius: 8px; /* Same border-radius as the form container */
+filter: blur(10px); 
+}
+.login_form {
+text-align: center;
+}
+
+.input_group {
+margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+padding: 10px;
+width: 100%;
+border: 1px solid #be0000;
+border-radius: 5px;
+}
+
+
+
+
+.hi {
+text-align: center;
+color: rgb(0, 0, 0);
+background-image: url("/assets/Login/joanna-kosinska-7ACuHoezUYk-unsplash.jpg");
+background-size: cover;
+background-position: center;
+-webkit-background-clip: text;
+background-clip: text;
+animation: moveBackground 1s linear infinite;
+}
+
+ .login_form_container {
+  position: relative;
+}
+
+.alert-message {
+  position: absolute;
+  bottom:100%;
+  border-top-right-radius: 90px;
+  padding-top: 20px;
+  color: red;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.password-toggle {
+  position: relative;
+}
+
+.password-toggle i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; 
+}
+
+
+
+
+button {
+  --color: #0077ff;
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+}
+
+button::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+button:hover {
+  color: white;
+}
+
+button:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+

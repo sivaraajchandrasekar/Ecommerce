@@ -1,0 +1,64 @@
+<div class="payment-message">
+  <marquee behavior="scroll" direction="left">
+    <h1 style="color: red;"> 😊 Our Team Will Contact You Shortly To <span style="color: green;"> confirm your order.</span> Thank you for Using Our Website!😊 </h1>
+  </marquee>
+</div>
+
+<div class="login-container">
+  <div class="form-container">
+    <h2 style="text-align: center; color: black;">Order</h2>
+    <form [formGroup]="orderForm" (ngSubmit)="placeOrder()">
+      <div class="form-group">
+        <label for="name" style="color: black;">Name</label>
+        <input type="text" id="name" placeholder="Name" formControlName="name">
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('name')?.touched && orderForm.get('name')?.invalid">Name is required</span>
+      </div>          
+      <div class="form-group"> 
+        <label for="phone" style="color:black;">Phone Number</label>
+        <input type="number" id="phone" placeholder="Phone Number" formControlName="phoneno">
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('phoneno')?.touched && orderForm.get('phoneno')?.invalid">Phone Number is required</span>
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('phoneno')?.errors?.['pattern']">Please enter a 10-digit phone number</span>
+      </div>
+      <div class="form-group">
+        <label for="email" style="color:black;">Email Address</label>
+        <input type="email" id="email" placeholder="Email Address" formControlName="email">
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('email')?.touched && orderForm.get('email')?.invalid">Email Address is required</span>
+      </div>
+      <div class="form-group">
+        <label for="street" style="color:black;">Street</label>
+        <input type="text" id="street" placeholder="Street" formControlName="street">
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('street')?.touched && orderForm.get('street')?.invalid">Street is required</span>
+      </div>
+      <div class="form-group">
+        <label for="area" style="color:black;">Area</label>
+        <input type="text" id="area" placeholder="Area" formControlName="area">
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('area')?.touched && orderForm.get('area')?.invalid">Area is required</span>
+      </div>
+      <div class="form-group">
+        <label for="pincode" style="color:black;">Pincode</label>
+        <input type="number" id="pincode" placeholder="Pincode" formControlName="pincode">
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('pincode')?.touched && orderForm.get('pincode')?.invalid">Pincode is required</span>
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('pincode')?.errors?.['pattern']">Please enter a 6-digit Numbers Only</span>
+
+    
+      </div>
+      <div class="form-group">
+        <label for="payment" style="color:black;">Payment Method</label>
+        <select id="payment" formControlName="payment" placeholder="Select Payment Method">
+          <option value="" disabled selected hidden>Select Payment Method</option>
+          <option value="cashOnDelivery">Cash on Delivery</option>
+          <option value="upi">UPI</option>
+        </select>
+        <span style="color: red; font-size: 18px;" *ngIf="orderForm.get('payment')?.touched && orderForm.get('payment')?.invalid">Payment Method is required</span>
+      </div>
+      <div *ngIf="orderForm.get('payment')?.value === 'upi'">
+        <h3>Select UPI Provider</h3>
+        <input type="radio" id="phonePay" name="upiProvider" value="phonePay"> PhonePe
+        <input type="radio" id="paytm" name="upiProvider" value="paytm"> Paytm
+        <input type="radio" id="googlePay" name="upiProvider" value="googlePay"> Google Pay
+      </div>
+      <button type="submit" [disabled]="!orderForm.valid">Order</button>
+      <button style="left: 90px;" type="button" (click)="back()">Cancel Order</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+<div>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;"></nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/home/logo.png" alt="Logo" height="50" class="d-inline-block align-text-top">
+      </a>
+      <a class="navbar-brand">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li> <a class="nav-link" [routerLink]="['/mobiles']" routerLinkActive="active">Mobiles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='["/electro"]' routerLinkActive="active">Electronics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dress']">Dress</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/kids']">Kids</a>
+          </li>
+        </ul>
+      </div>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+
+          <input style="height: 50px;width: 200px;margin-right: 10px;border-radius: 50px;" #searchQuery type="text"
+            placeholder="Search products..." [(ngModel)]="searchTerm" [typeahead]="searchResults$ | async"
+            typeaheadOptionField="title" class="form-control " (input)="onInputChange()" (selectItem)="onSelect($event)"
+            aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit" (click)="onSearch(searchQuery.value)">Search</button>
+
+        </div>
+      </nav>
+    </div>
+    <div>
+      <button mat-raised-button *ngIf="data " (click)="toggleSignOutOptions()">
+        {{ user.username }}
+      </button>
+
+      <div *ngIf="showSignOutOptions">
+        <a class="hiii" (click)="signOut()" style="margin-left:30px;">
+          Sign Out
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid position-relative">
+
+    <div class="img">
+
+      <img src="assets/home/wp3537544-e-commerce-wallpapers.jpg" alt="Image Courrputed">
+
+      <div class="position-absolute translate-middle text-center" style="top: 20%;left: 47%;">
+        <h1 class="text-center" style="font-size: 100px;"><i><b>WELCOME OUR PAGE </b></i></h1>
+        <p class="text-danger">“If people believe they share values with a company, they will stay loyal to the brand.”
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <h1 class="text-center" style="font-size: 50px; font-family: Georgia, 'Times New Roman', Times, serif;"><em><b>The
+        simplest way to sell anything online! </b></em></h1>
+  <aside class="video-container">
+    <div class="video-wrapper">
+      <video width="600" height="400" autoplay loop controls>
+        <source src="/assets/mobiles/production_id_4873111 (1080p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="text-content">
+      <h2 style="color:blueviolet;"><b>SECURE WEBSITE</b></h2>
+      <ul style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <li>
+          <h3>Your payment information is in safe hands. We ensure the always security to protect your transactions."
+          </h3>
+        </li>
+        <li>
+          <h3> "We prioritize the security of your payments - rest assured, your financial safety is our topmost
+            concern."</h3>
+        </li>
+        <li>
+          <h3>"Your payment safety is our commitment. Trust us for secure transactions and peace of mind."</h3>
+        </li>
+        <li>
+          <h3>"With our secure payment system, your transactions are safeguarded, ensuring a worry-free experience."
+          </h3>
+        </li>
+        <li>
+          <h3>"Your payment details are encrypted and protected, providing you a safe and secure payment environment."
+          </h3>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <br><br><br>
+  <div
+    style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <h4>Sell products and services online on any channel with just your website link. Showcase your <br>collection,
+      offer
+      workshops, collect event tickets, and do much more with Instamojo online <br> stores and landing pages.</h4>
+    <br><br>
+  </div>
+  <div class="container-fluid bg-dark">
+    <div class="row justify-content-evenly">
+      <div class="col-2">
+        <div class="footer-content">
+          <h2>Explore Products</h2>
+          <ul>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Clothing & Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books & Media</a></li>
+            <li><a href="#">Toys & Games</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="footer-content">
+          <h2>Useful Links</h2>
+          <ul>
+            <li><a href="#">Track Your Order</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="footer-content">
+          <h2>Shopping Assistance</h2>
+          <ul>
+            <li><a href="#">How to Shop</a></li>
+            <li><a href="#">Shipping Information</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Size Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="footer-content">
+          <h2>Contact Us</h2>
+          <ul>
+            <li><a href="#">Support Chat</a></li>
+            <li><a href="#">Email Support</a></li>
+            <li><a href="#">Customer Feedback</a></li>
+            <li><a href="#">Become a Vendor</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="siva">
+        <img src="/assets/foo/wha.jpeg" alt="WhatsApp">
+        <a href="https://www.WhatsApp.com/" target="_blank">WhatsApp</a>
+
+        <img src="/assets/foo/fb.jpeg" alt="Facebook">
+        <a href="https://www.fb.com/" target="_blank">Facebook</a>
+
+        <img src="/assets/foo/whats.jpeg" alt="Instagram">
+        <a href="https://www.Instagram.com/" target="_blank">Instagram</a>
+
+        <img src="/assets/foo/twit.png" alt="Twitter">
+        <a href="https://www.Twitter.com/" target="_blank">Twitter</a>
+      </div>

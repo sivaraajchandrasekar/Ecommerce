@@ -1,0 +1,226 @@
+
+  .error {
+    color: rgb(255, 0, 0);
+    font-size: 19px;
+    margin-top: 5px;
+  }
+
+.login_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/Login/sarah-dorweiler-x2Tmfd1-SgA-unsplash.jpg");
+}
+
+.login_form_container {
+  padding: 50px;
+  position: relative; 
+  z-index: 1; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login_form_container::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Adjust as needed to cover the border */
+  bottom: -10px; /* Adjust as needed to cover the border */
+  left: -10px; /* Adjust as needed to cover the border */
+  right: -10px; /* Adjust as needed to cover the border */
+  z-index: -1; /* Behind the form content */
+  border: 1px solid transparent; /* Transparent border to keep space */
+  border-radius: 8px; /* Same border-radius as the form container */
+  filter: blur(10px); 
+}
+.login_form {
+  text-align: center;
+}
+
+.input_group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #be0000;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #a9cce3; 
+  cursor: not-allowed;
+}
+
+.footer {
+  margin-top: 15px;
+}
+@keyframes borderAnimation {
+  0% {
+    border: 1px solid #3498db;
+  }
+  100% {
+    border: 1px solid #27ae60;
+  }
+}
+
+button {
+  position: relative;
+  font-size: 1em;
+  padding: 0.7em 1.4em;
+  background-color: #BF0426;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5em;
+  color: #DEDEDE;
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+}
+
+button::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 50%, rgba(150,4,31,1) 50%, rgba(191,4,38,1) 60%);
+  border-radius: 0 0 0.5em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+button:hover::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+button:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.1em, 0.1em);
+}
+
+
+   .login_form_container {
+    position: relative;
+  }
+  
+  .alert-message {
+    position: absolute;
+    bottom:100%;
+    border-top-right-radius: 90px;
+    padding-top: 20px;
+    color: red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .password-toggle {
+    position: relative;
+  }
+  
+  .password-toggle i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; 
+  }
+    .login_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+ 
+  .login-container {
+    position: relative;
+  }
+  
+ 
+  
+  .login-form {
+    position: relative;
+    z-index: 1;
+  }
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Setting a background color as a fallback for the video */
+.login_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Fallback color if the video isn't supported */
+}
+
+/* Styling the video container */
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Styling the background video */
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+/* Styling the login form container */
+.login_form_container {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+/* Styling input fields */
+.input_text {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #be0000;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Styling buttons */
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #a9cce3;
+  cursor: not-allowed;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  font-size: 16px;
+  margin-top: 5px;
+}
+
